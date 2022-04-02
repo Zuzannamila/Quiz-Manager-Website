@@ -1,0 +1,65 @@
+<div class="center-page-content">
+    <div class="page-content-width" style="display: block">
+		  <h2 style="line-height: 56px">Create User</h2>
+		  <div class="card card-padding">
+        <form [formGroup]="form" novalidate (keydown.enter)="$event.preventDefault()" autocomplete="off">
+          <!-- User inputs -->
+          <div class="inputs">
+            <div class="row">
+              <mat-form-field class="col-12 col-sm-6 col-md-4" appearance="standard">
+                <input
+                  required
+                  matInput
+                  formControlName="userName"
+                  placeholder="First and last name"
+                  autocomplete="off"
+                  id="registerUsername"
+                />
+              </mat-form-field>
+            </div>
+            <div class="row mt-lg">
+              <mat-form-field class="col-12 col-sm-6 col-md-4" appearance="standard">
+                <input
+                  required
+                  matInput
+                  formControlName="email"
+                  placeholder="Email"
+                  autocomplete="off"
+                  id="registerEmail"
+                />
+              </mat-form-field>
+            </div>
+            <div class="row mt-lg">
+              <mat-form-field class="col-12 col-sm-6 col-md-4" appearance="standard">
+                <input 
+                  required
+                  matInput
+                  formControlName="password"
+                  placeholder="Password"
+                  autocomplete="off"
+                  id="registerPassword"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+          
+          <!-- Buttons -->
+				<div class="p-sm pr-md">
+					<!-- <button class="outline-icon-button mr-md" [routerLink]="'/locations'" id="cancelButton">
+						<mat-icon matPrefix class="mr-sm" id="cancelIcon"> keyboard_backspace </mat-icon>
+						<span>Cancel</span>
+					</button> -->
+					<app-button 
+            [input]="'Add a user'"
+            [disabled]="isDisabled(form.invalid)"
+						(click)="onSubmit()"
+						type="button"
+						color="primary"
+						(keydown.enter)="onSubmit()"
+					>
+					</app-button>
+				</div>
+        </form>
+      </div>
+    </div>
+</div>
