@@ -7,4 +7,11 @@ import { Component, Input } from '@angular/core';
 })
 export class ButtonComponent {
   @Input() input: string | undefined;
+  @Input() disabled: any | undefined;
+
+  isDisabled(): any {
+		return this.disabled
+			? 'true'
+			: undefined;
+	}
 }

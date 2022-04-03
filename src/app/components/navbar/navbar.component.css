@@ -1,0 +1,66 @@
+.right-side {
+    display: inline-flex;
+    justify-content: end;
+}
+ul {
+    list-style-type: none;    
+
+}
+.navbar {
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 32px 0 32px;
+}
+li a {
+    color: #444444;
+    font-size: 14px;
+}
+li a:hover {
+    text-decoration: underline;
+}
+#logo {
+    font-size: 14px;
+    color: #444444;
+    font-weight: 800;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 40px;
+    margin: 10px;
+    background-color: #f1f1f1;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    font-size: 14px;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {opacity: 0.6;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover~.dropdown-content {display: block;}
+  .dropdown-content:hover{display: block;}
+  
+

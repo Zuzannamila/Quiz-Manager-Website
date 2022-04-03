@@ -1,14 +1,16 @@
-button{
+button {
+    display: block;
     background-color: transparent;
-    border-radius: 15px 15px 15px 15px;
+    border-radius: 5px 5px 5px 5px;
     border: 0.3px solid black;
-    min-width: 100px;
+    width: 100%;
     font-size: 14px;
     font-family: 'Space Mono', monospace;
-    text-align: center;
+    
 }
 button:hover:not(:disabled){
-    background-color:#2FAB5A;
+    background-color:#3860FF;
+    color: #fff;
 }
 .dot {
     margin-right: 10px;
@@ -26,6 +28,7 @@ button:hover:not(:disabled){
 }
 .container-span {
     display: inline-flex;
+    float: left;
     padding: 5px 20px 5px 0px; 
    
 }

@@ -9,21 +9,24 @@ body {
 	color: #5a5a5a;
 	line-height: 20px;
 }
-
 h1 {
 	font-size: 24px;
 	font-weight: 500;
 	color: #5a5a5a;
 	line-height: 32px;
 }
-
 h2 {
-	font-size: 20px;
-	font-weight: 400;
-	color: #5a5a5a;
-	line-height: 26px;
+	font-size: 20px !important;
+	font-weight: 400 !important;
+	color: #5a5a5a !important;
+	line-height: 26px !important;
 }
-
+p {
+	color: #5a5a5a !important;
+	margin-bottom: 16px !important;
+	opacity: 0.8 !important;
+	font-size: 14px !important;
+}
 * {
 	font-family: Roboto, sans-serif;
 }
@@ -44,6 +47,9 @@ h6 {
 }
 .page-content-width {
 	width: 1150px;
+}
+.page-content-width-quarter {
+	width: 287.5px;
 }
 .card-padding {
 	padding: 24px !important;
@@ -102,4 +108,8 @@ a {
 .caption {
 	font-size: 12px;
 	color: #3f3f3f;
+}
+.float-right {
+	display: flex;
+	justify-content: end;
 }

@@ -1,0 +1,17 @@
+<div class="center-page-content">
+    <div class="page-content-width" style="display: block">
+        <div class="row">
+            <div class="mb-md col-xs-12 col-sm-8">
+                <h2>Quizzes</h2>
+                <p>Recently most trending quizzes. Give it a try!</p>
+            </div>
+            <div *ngIf="isAdmin()" class="mt-xl col-xs-12 col-sm-4 float-right">
+                <app-button
+                    [input]="'Add a quiz'"
+                    type="button"
+                    routerLink="/add-quiz"
+                ></app-button>
+            </div>
+        </div>
+    </div>
+</div>

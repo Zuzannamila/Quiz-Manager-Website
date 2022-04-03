@@ -1,9 +1,10 @@
 .username-initials {
 	line-height: 37px;
-	color: #00659a;
+	color: #fff;
 	height: 37px;
 	width: 37px;
-	background-color: #cce6f5;
+	background-color: #FF90AE;
 	border-radius: 50%;
 	border: none;
+	font-size: 14px;
 }

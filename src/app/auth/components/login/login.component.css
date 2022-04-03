@@ -1,0 +1,45 @@
+.page-content-width-about-quarter {
+	width: 350px;
+}
+.login-form {
+    display: flex;
+    position: absolute;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    border: none;
+    align-items: center;
+    justify-content: center;
+}
+.picture {
+    position: absolute;
+    left: 0;
+    width: 50%;
+    background-color: #FFD229;
+    height: 100%;
+}
+.table {
+    display: table;
+    width: 100%;  
+    border: none;
+    
+}
+.inputs {
+    margin-top: 8px !important;
+    margin-bottom: 32px !important;
+}
+.mat-input-element {
+    border: 0.5px solid #444444;
+    border-radius: 7px 7px 7px 7px;
+    font-size: 14px;
+    padding: 8px 10px;
+    margin-top: 10px;
+}
+.mat-form-field {
+	line-height: 2.6 !important;
+}
+
+.error {
+    font-size: 12px;
+    opacity: 0.7;
+}

@@ -1,1 +1,54 @@
-<p>login works!</p>
+<div class="table">
+    <div class="picture"></div>
+    <div class="login-form">
+        <div class="center-page-content">
+            <div class="page-content-width-about-quarter" style="display: block">
+                <div class="card card-padding">
+                    <form [formGroup]="form" novalidate (keydown.enter)="$event.preventDefault()" autocomplete="off">
+                        <!-- User inputs -->
+                        <div class="inputs">
+                         
+                            <mat-form-field class="col-11" appearance="standard">
+                              <input
+                                required
+                                matInput
+                                formControlName="email"
+                                placeholder="Email address"
+                                autocomplete="off"
+                                id="loginEmail"
+                              />
+                            </mat-form-field>
+                            <mat-form-field class="col-11" appearance="standard">
+                              <input 
+                                required
+                                matInput
+                                formControlName="password"
+                                placeholder="Password"
+                                autocomplete="off"
+                                id="loginPassword"
+                              />
+                            </mat-form-field>
+                        </div>
+                        
+                        <!-- Buttons -->
+                        <div style="width: 100%; margin-bottom: 24px;">
+                            <app-long-button 
+                                style="width: 100%;"
+                                [input]="'LOG IN =>'"
+                                [disabled]="isDisabled(!form.controls.email?.value || !form.controls.password?.value)"
+                                (click)="onSubmit()"
+                                type="button"
+                                (keydown.enter)="onSubmit()"
+                            >
+                            </app-long-button>
+                            <div *ngIf="form.errors?.unauthenticated">
+                                <span class="error">Username or Password incorrect!</span>
+                            </div>
+                        </div>
+                      </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

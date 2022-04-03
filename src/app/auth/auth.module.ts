@@ -1,7 +1,6 @@
 import { ButtonComponent } from './shared/button/button.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { AuthRoutingModule } from './auth-routing.module';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -11,12 +10,15 @@ import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LongButtonComponent } from './shared/long-button/long-button.component';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   declarations: [
     LoginComponent,
     RegisterComponent,
-    ButtonComponent
+    ButtonComponent,
+    LongButtonComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +29,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatInputModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    BrowserModule
+    BrowserModule,
+    MatRadioModule
   ],
   exports: [
     LoginComponent

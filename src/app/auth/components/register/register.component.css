@@ -11,3 +11,31 @@
 .mat-form-field {
 	line-height: 2.6 !important;
 }
+.text-color {
+	color: #444444;
+}
+
+.roles {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+}
+
+.radio-button {
+	margin: 5px;
+    margin-right: 14px;
+    color: #444444;
+    font-size: 12px;
+}
+.mat-radio-checked{
+    background-color: red;
+}
+/* .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-inner-circle {
+     border-color: blue;
+} */
+b {
+    margin-left: 5px;
+    margin-top: 28px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}

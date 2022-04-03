@@ -8,21 +8,20 @@ import { Router } from '@angular/router';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
   form: FormGroup;
+  radio: string | undefined;
 
   constructor(
     private _router: Router,
-    private _authService: AuthService)
-  {
+    private _authService: AuthService 
+    ) {
     this.form = new FormGroup({
 			userName: new FormControl('', [Validators.required]),
 			email: new FormControl('', [Validators.required, Validators.email]),
 			password: new FormControl('', [Validators.required]),
+      role: new FormControl('', [Validators.required])
 		});
-  }
-
-  ngOnInit(): void {
   }
 
   onSubmit() {
@@ -31,14 +30,16 @@ export class RegisterComponent implements OnInit {
 				UserName: this.form.value.userName.trim(),
 				Email: this.form.value.email.trim(),
 				Password: this.form.value.password,
+        Role: this.form.value.role,
 			};
 			this._authService.register(userToAdd).subscribe(x => {
-				this._router.navigate(['/login']);
+				this._router.navigate(['/user-menager']);
 			});
 		} 
   }
 
-  isDisabled(isEmpty: boolean) {
+  isDisabled(isEmpty: any) {
+    console.log(isEmpty);
     if (isEmpty) {
       return true;
     }

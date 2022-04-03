@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -9,9 +9,9 @@ export class ButtonComponent {
   @Input() input: string | undefined;
   @Input() disabled: any | undefined;
 
-  // isDisabled(): any {
-	// 	return this.disabled
-	// 		? 'true'
-	// 		: undefined;
-	// }
+  isDisabled(): any {
+		return this.disabled
+			? 'true'
+			: undefined;
+	}
 }
