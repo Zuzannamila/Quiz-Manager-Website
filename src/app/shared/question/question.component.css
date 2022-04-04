@@ -1,0 +1,32 @@
+.row-center {
+    display: flex;
+    justify-content: center;
+}
+.dot {
+    margin-right: 10px;
+    height: 35px;
+    width: 35px;
+    background-color: #FF388A !important;
+    border-radius: 50%;
+    border: none;
+    display: inline-block; 
+}
+.number {
+    position: absolute;
+    top: 28px;
+}
+.justify-end {
+    display: flex;
+    justify-content: end;
+}
+.radio-button {
+    margin: 14px 14px 5px 5px;
+    color: #444444;
+    font-size: 14px;
+}
+/* .mat-radio-checked{
+    background-color: red;
+} */
+.margin-top {
+    margin-top: 36px;
+}

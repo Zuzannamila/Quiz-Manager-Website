@@ -83,10 +83,10 @@ h6 {
 
 
 h3 {
-	font-size: 16px;
-	font-weight: 500;
-	color: #5a5a5a;
-	line-height: 23px;
+	font-size: 16px !important;
+	font-weight: 500 !important;
+	color: #5a5a5a !important;
+	line-height: 23px !important;
 }
 
 h4 {

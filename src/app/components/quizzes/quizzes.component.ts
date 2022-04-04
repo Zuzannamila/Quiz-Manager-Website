@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SecretService } from 'src/app/services/secret.service';
+import { QuizzesService } from 'src/app/services/quizzes.service';
 
 @Component({
   selector: 'app-quizzes',
@@ -8,10 +8,10 @@ import { SecretService } from 'src/app/services/secret.service';
 })
 export class QuizzesComponent implements OnInit {
 
-  constructor(private secretService: SecretService) { }
+  constructor(private _quizzesService: QuizzesService) { }
 
   ngOnInit(): void {
-    this.secretService.getValues().subscribe((secrets) => console.log(secrets));
+    // this._quizzesService.getQuizzes().subscribe((secrets: any) => console.log(secrets));
   }
   isAdmin(): boolean {
     return localStorage.getItem('role') == 'Admin' ? true : false;

@@ -20,7 +20,8 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   login(model: any): Observable<IUser>{
-    return this.http.post(this.baseUrl + `login?Email=${model.Email}&Password=${model.Password}`, model).pipe(
+    return this.http.post(this.baseUrl + `login?Email=${model.Email}&Password=${model.Password}`, model)
+    .pipe(
       map((response: any) => {
         const decodedToken = this.helper.decodeToken(response.token);
         this.currentUser.username = decodedToken.username;
@@ -53,7 +54,6 @@ export class AuthService {
 
   register(model: any) {
     const url = this.baseUrl + `register?UserName=${model.UserName}&Email=${model.Email}&Password=${model.Password}&Role=${model.Role}`
-    console.log(localStorage.getItem('token'));
     const token = 'Bearer ' + localStorage.getItem('token');
     return this.http.post(url, model, {
       observe: 'response',

@@ -2,12 +2,19 @@
     <div class="page-content-width" style="display: block">
       <div class="row">
         <div class="mb-md col-xs-12 col-sm-8">
-          <h2 style="line-height: 56px">Create a Quiz</h2>
-          <p>Describe your quiz in few words. You must specify the description and category as well.</p>
+          <h2 style="line-height: 56px">Edit a Quiz</h2>
+          <p>Amend changes to your quiz.</p>
+        </div>
+        <div *ngIf="isAdmin()" class="mt-xl col-xs-12 col-sm-4 float-right">
+            <app-button
+                [input]="'Add a question'"
+                type="button"
+                routerLink="/add-question"
+            ></app-button>
         </div>
       </div>
 	  <div class="card card-padding">
-        <form [formGroup]="form" (keydown.enter)="$event.preventDefault()" autocomplete="off">
+        <form [formGroup]="form" novalidate (keydown.enter)="$event.preventDefault()" autocomplete="off">
             <!-- User inputs -->
             <div class="inputs">
                 <div class="row">
@@ -46,17 +53,6 @@
                         />
                     </mat-form-field>
                 </div>
-            </div>
-            <!-- Buttons -->
-            <div class="p-sm pr-md">
-                <app-button 
-                    [input]="'Add a quiz'"
-                    [disabled]="isDisabled(!form.controls.title?.value || !form.controls.description?.value || !form.controls.category?.value)"
-                    (click)="onSubmit()"
-                    type="button"
-                    (keydown.enter)="onSubmit()"
-                >
-                </app-button>
             </div>
         </form>
       </div>
