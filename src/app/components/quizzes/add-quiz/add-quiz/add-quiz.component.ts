@@ -34,13 +34,6 @@ export class AddQuizComponent implements OnInit {
       var id = json.body['id'];
       this._router.navigate([`/edit-quiz/${id}`]);
 		});
-    // this._quizzesService.addQuiz(quizToAdd).subscribe(quiz => {
-    //   var string = JSON.stringify(x);
-    //   var json = JSON.parse(string);
-    //   var id = json.body['id'];
-    //   this._router.navigate([`/edit-quiz/${quiz}`]);
-		// });
-
   }
   isDisabled(isEmpty: any) {
     if (isEmpty) {

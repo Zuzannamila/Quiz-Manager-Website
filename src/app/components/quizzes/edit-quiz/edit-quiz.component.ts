@@ -52,8 +52,25 @@ export class EditQuizComponent implements OnInit {
     this.form.get('category')?.setValue(quiz.category);
 	};
 
+  onSubmit() {
+    const quizToEdit: any = {
+			title: this.form.value.title.trim(),
+			description: this.form.value.description.trim(),
+			category: this.form.value.category.trim(),
+		};
+		this._quizzesService.editQuiz(quizToEdit, this.currentQuiz?.id).subscribe((x: Response ) => {
+      this._router.navigate([``]);
+		});
+  }
+
   isAdmin(): boolean {
     return localStorage.getItem('role') == 'Admin' ? true : false;
   }
 
+  isDisabled(isEmpty: any) {
+    if (isEmpty) {
+      return true;
+    }
+    return undefined;
+  }
 }

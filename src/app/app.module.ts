@@ -20,6 +20,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { QuizCardComponent } from './shared/quiz-card/quiz-card/quiz-card.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { QuizDetailsComponent } from './components/quizzes/quiz-details/quiz-details.component';
+import { EditQuestionComponent } from './components/questions/edit-question/edit-question.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { QuizDetailsComponent } from './components/quizzes/quiz-details/quiz-det
     AddQuestionComponent,
     QuestionComponent,
     QuizCardComponent,
-    QuizDetailsComponent
+    QuizDetailsComponent,
+    EditQuestionComponent
   ],
   imports: [
     BrowserModule,

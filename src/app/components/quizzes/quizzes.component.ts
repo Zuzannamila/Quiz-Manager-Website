@@ -33,7 +33,6 @@ export class QuizzesComponent implements OnInit {
           quiz: quiz
         };
         this.tiles.push(tile);
-
       });
     });
   };

@@ -2,26 +2,18 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { IQuestion } from '../models/iquestion';
+import { IAnswer } from '../models/ianswer';
 
 @Injectable({
   providedIn: 'root'
 })
-export class QuestionsService {
+export class AnswersService {
 
   constructor(private http: HttpClient) { }
   baseUrl: string = environment.baseUrl;
 
-  getQuestions(id: any) {
-    const url = this.baseUrl + `api/${id}/questions`;
-		return this.http
-			.get<IQuestion[]>(url, { observe: 'response' })
-			.pipe(
-				map(response => response.body));
-  }
-
-  addQuestion(model: any, id: any) {
-    const url = this.baseUrl + `api/${id}/questions`;
+  addAnswers(model: any, id: any) {
+    const url = this.baseUrl + `api/${id}/answers`;
     const token = 'Bearer ' + localStorage.getItem('token');
     return this.http.post(url, model, {
       observe: 'response',
@@ -30,6 +22,18 @@ export class QuestionsService {
       }),
     })
     .pipe(
-      map(response => response.body));
+      map((response: any) => {
+        return response;
+      })
+    )
   }
+
+  getAnswers(id: any) {
+    const url = this.baseUrl + `api/${id}/answers`;
+		return this.http
+			.get<IAnswer[]>(url, { observe: 'response' })
+			.pipe(
+				map(response => response.body));
+  }
+    
 }

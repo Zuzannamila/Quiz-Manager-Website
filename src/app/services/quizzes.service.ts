@@ -28,19 +28,21 @@ export class QuizzesService {
       })
     )
   }
-  // addQuiz(model: any) {
-  //   const url = this.baseUrl + 'api/quizzes';
-  //   const token = 'Bearer ' + localStorage.getItem('token');
-  //   return this.http.post(url, model, {
-  //     observe: 'response',
-  //     headers: new HttpHeaders({
-  //       'Authorization': token,
-  //     }),
-  //   })
-  //   .pipe(
-  //     map(response => response.body));
-  // }
-
+  editQuiz(model: any, id: any) {
+    const url = this.baseUrl + `api/quizzes/${id}`;
+    const token = 'Bearer ' + localStorage.getItem('token');
+    return this.http.put(url, model, {
+      observe: 'response',
+      headers: new HttpHeaders({
+        'Authorization': token,
+      }),
+    })
+    .pipe(
+      map((response: any) => {
+        return response;
+      })
+    )
+  }
   getQuizzes() {
     const url = this.baseUrl + 'api/quizzes';
 		return this.http

@@ -1,28 +1,66 @@
 <div class="center-page-content">
     <div class="page-content-width" style="display: block">
-        <div class="row">
-            <div class="mb-md col-xs-12 col-sm-8">
-                <h2 style="line-height: 56px">Question</h2>
+        <div class="card card-padding">
+            <div class="justify-space-end">
+                <div *ngIf="isAdmin() || isTeacher()">
+                    <button class="astext" (click)="navigateToEdit()">Edit</button>
+                    <button class="astext" (click)="showAnswers()">Show answer =></button>
+                </div>
+                <span class="dot"><span class="number">1</span></span>
             </div>
-        </div>
-    <div class="card card-padding">
-        <div class="row justify-end">
-            <span class="dot"><span class="number">1</span></span>
-        </div>
-        <div class="row row-center">
-            <div class="mb-md col-xs-12 col-sm-8 row-center">
-                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?</h3>
+            <div class="row">
+                <h2>{{ this.question }}</h2>
             </div>
-            <div class="mb-md col-xs-12 col-sm-8 row-center margin-top">
-                <b class="row mt-xl mb-sm text-color">Answers</b>
-            </div>
-            <div class="mb-md col-xs-12 col-sm-8 row-center">
-                <mat-radio-group class="answers" formControlName="answer" aria-label="Select an option">              
-                    <mat-radio-button class="radio-button" >Lorem ipsum dolor sit amet, consectetur adipiscing elit.</mat-radio-button>
-                    <mat-radio-button class="radio-button">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</mat-radio-button>
-                    <mat-radio-button class="radio-button">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</mat-radio-button>
-                    <mat-radio-button class="radio-button">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</mat-radio-button>
-                </mat-radio-group>
+            <div class="row row-center">
+                <div class="row-center margin-top">
+                    <b class="row mt-xl mb-sm text-color">Answers</b>
+                </div>
+                <div class="answer-row space-between">
+                    <div class="answer-column">                      
+                        <div class="answer-row">
+                            <span class="label">a)</span>
+                            <h4>{{ this.answerA }}</h4>    
+                        </div>
+                        <div class="answer-row">
+                            <span class="label">b)</span>
+                            <h4>{{ this.answerB }}</h4>    
+                        </div>                          
+                    </div>
+                    <div class="answer-column">                    
+                        <div class="answer-row">
+                            <span class="label">c)</span>
+                            <h4>{{ this.answerC }}</h4>    
+                        </div>
+                        <div class="answer-row">
+                            <span class="label">d)</span>
+                            <h4>{{ this.answerD }}</h4>    
+                        </div> 
+                    </div>
+                </div>
+                <!-- Correct Answer -->
+                <div class="row-center margin-top">
+                    <b class="row mt-xl mb-sm text-color">Mark the correct answer</b>
+                </div>
+                <form [formGroup]="form" (keydown.enter)="$event.preventDefault()" autocomplete="off">
+                    <div class="answer-row space-between">
+                        <div>
+                            <label for="answerA" class="label">a)</label>
+                            <input id="answerA" type="radio" value="answerA" name="answers" formControlName="answers">   
+                         </div>
+                         <div>
+                            <label for="answerB" class="label">b)</label>
+                            <input id="answerB" type="radio" value="answerB" name="answers" formControlName="answers">
+                        </div>
+                        <div>
+                            <label for="answerC" class="label">c)</label>
+                            <input id="answerC" type="radio" value="answerC" name="answers" formControlName="answers">   
+                         </div>
+                         <div>
+                            <label for="answerD" class="label">d)</label>
+                            <input id="answerD" type="radio" value="answerD" name="answers" formControlName="answers">
+                        </div>
+                    </div>
+                </form>  
             </div>
         </div>
     </div>

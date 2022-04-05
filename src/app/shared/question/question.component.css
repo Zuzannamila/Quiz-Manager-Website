@@ -1,32 +1,68 @@
-.row-center {
-    display: flex;
-    justify-content: center;
-}
+
 .dot {
-    margin-right: 10px;
     height: 35px;
     width: 35px;
-    background-color: #FF388A !important;
+    background-color: transparent !important;
     border-radius: 50%;
-    border: none;
+    border: 0.2px solid black;
     display: inline-block; 
 }
 .number {
     position: absolute;
     top: 28px;
+    right: 38px;
+    color: black;
 }
-.justify-end {
+.justify-space-end {
     display: flex;
-    justify-content: end;
+    flex-direction: row;
+    justify-content:end;
+    margin-bottom: 14px;
 }
-.radio-button {
-    margin: 14px 14px 5px 5px;
-    color: #444444;
-    font-size: 14px;
-}
-/* .mat-radio-checked{
-    background-color: red;
-} */
 .margin-top {
     margin-top: 36px;
+}
+b {
+    font-size: 14px;
+}
+.row-center {
+    margin-bottom: 14px;
+    display: flex;
+    justify-content: center;
+}
+.button {
+    margin-top: 42px;
+}
+.answer-row {
+    display: flex;
+	flex-direction: row;
+}
+.answer-column {
+    display: flex;
+	flex-direction: column;
+    width: 300px !important;
+}
+.space-between {
+    justify-content: space-around;
+}
+.label {
+    margin-right: 14px;
+}
+.astext {
+    width: 120px;
+    background:none;
+    border:none;
+    margin-right: 21px;
+    margin-top: 5px;
+    padding:0;
+    cursor: pointer;
+    font-size: 14px;
+    color: #FFD229;
+}
+.astext:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+.justify-space-around h2 {
+    width: 300px;
 }

@@ -1,3 +1,4 @@
+import { EditQuestionComponent } from './components/questions/edit-question/edit-question.component';
 import { QuizDetailsComponent } from './components/quizzes/quiz-details/quiz-details.component';
 import { LoginGuardGuard } from './services/login-guard.guard';
 import { NgModule, Component } from '@angular/core';
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'user-menager', component: UserMenagerComponent, canActivate:[LoginGuardGuard] },
   { path: 'add-quiz', component: AddQuizComponent, canActivate:[LoginGuardGuard] },
   { path: 'edit-quiz/:id', component: EditQuizComponent, canActivate:[LoginGuardGuard]},
+  { path: 'edit-question/:id', component: EditQuestionComponent, canActivate:[LoginGuardGuard]},
   { path: ':id/add-question', component: AddQuestionComponent, canActivate:[LoginGuardGuard] },
   { path: ':id', component: QuizDetailsComponent, canActivate:[LoginGuardGuard] }
 

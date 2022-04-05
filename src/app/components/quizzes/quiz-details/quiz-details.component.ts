@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
+import { IQuestion } from 'src/app/models/iquestion';
+import { AnswersService } from 'src/app/services/answers.service';
 import { QuestionsService } from 'src/app/services/questions.service';
 import { QuizzesService } from 'src/app/services/quizzes.service';
 
@@ -15,7 +17,14 @@ export class QuizDetailsComponent implements OnInit {
   category: string = '';
   id: string = '';
 
-  constructor(private _activeRoute: ActivatedRoute, private _quizzesService: QuizzesService, private _questionsService: QuestionsService) { }
+  questions: IQuestion[] = [];
+  fullQuestions: any[] = [];
+
+  constructor(
+    private _activeRoute: ActivatedRoute,
+    private _quizzesService: QuizzesService,
+    private _answersService: AnswersService,
+    private _questionsService: QuestionsService) { }
 
   ngOnInit(): void {
     this._activeRoute.paramMap
@@ -33,13 +42,30 @@ export class QuizDetailsComponent implements OnInit {
     );
   }
 
-  assignDataToCards(quiz: any) {
+
+  assignDataToCards = (quiz: any) => {
     return this._questionsService.getQuestions(quiz.id).subscribe((res: any) => {
-      console.log(res);
+      this.questions = res;
+      this.questions.forEach(question => {
+        return this._answersService.getAnswers(question.id).subscribe((res: any) => {
+          let correctAnswerIndex = res.findIndex((x: { isCorrect: boolean; }) => x.isCorrect == true);     
+          var fullQuestion : any =  {
+            content: question.content,
+            answerA: res[0]?.content,
+            answerB: res[1]?.content,
+            answerC: res[2]?.content,
+            answerD: res[3]?.content,
+            correctAnswer: correctAnswerIndex,
+            questionId: question.id
+          };
+          this.fullQuestions.push(fullQuestion);
+    
+          });
+      });
 
       });
 
-  };
+  }
 
   setPage = (quiz: any) => {
     this.id = quiz.id;
