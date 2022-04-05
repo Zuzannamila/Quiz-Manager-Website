@@ -1,1 +1,74 @@
-<app-question></app-question>
+<div class="center-page-content">
+    <div class="page-content-width" style="display: block">
+      <div class="row">
+        <div class="mb-md col-xs-12 col-sm-8">
+          <h2 style="line-height: 56px">Add a question</h2>
+          <p>For each question you must provide four possible answers.</p>
+        </div>
+      </div>
+	  <div class="card card-padding">
+        <form [formGroup]="form" (keydown.enter)="$event.preventDefault()" autocomplete="off">
+            <!-- User inputs -->
+            <div class="inputs">
+                <div class="row mt-lg">
+                    <mat-form-field class="col-12 col-sm-6 col-md-4" appearance="standard">
+                        <textarea
+                            required
+                            matInput
+                            formControlName="question"
+                            placeholder="Question"
+                            autocomplete="off"
+                            id="question"
+                        ></textarea>
+                    </mat-form-field>
+                </div>
+                <div class="mb-md col-xs-12 col-sm-8 row-center margin-top">
+                    <b class="row mt-xl mb-sm text-color">Answers</b>
+                </div>
+                <div class="answer-row">
+                    <div>
+                        <input id="answerA" type="radio" value="answerA" name="answers" formControlName="answers">
+                     </div>
+                     <div>
+                        <input id="answerB" type="radio" value="answerB" name="answers" formControlName="answers">
+                     </div>
+
+                    <div class="answer-column">
+                        <mat-form-field class="col-12 col-sm-6 col-md-4" appearance="standard">
+                            <input 
+                            required
+                            matInput
+                            formControlName="answerAText"
+                            placeholder="Answer A"
+                            autocomplete="off"
+                            id="answerAText"
+                            />
+                        </mat-form-field>                   
+                        <mat-form-field class="col-12 col-sm-6 col-md-4" appearance="standard">
+                            <input 
+                            required
+                            matInput
+                            formControlName="answerBText"
+                            placeholder="Answer B"
+                            autocomplete="off"
+                            id="answerBText"
+                            />
+                        </mat-form-field>                                                          
+                    </div>
+                </div>  
+            </div>
+            <!-- Buttons -->
+            <div class="p-sm pr-md">
+                <app-button 
+                    [input]="'Add a question'"
+                    [disabled]="isDisabled(!form.controls.question?.value || !form.controls.answerBText?.value || !form.controls.answerAText?.value || !form.controls.answers?.value)"
+                    (click)="onSubmit()"
+                    type="button"
+                    (keydown.enter)="onSubmit()"
+                >
+                </app-button>
+            </div>
+        </form>
+      </div>
+    </div>
+</div>

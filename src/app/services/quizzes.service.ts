@@ -3,6 +3,7 @@ import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { IQuiz } from '../models/iquiz';
 
 @Injectable({
   providedIn: 'root'
@@ -40,19 +41,15 @@ export class QuizzesService {
   //     map(response => response.body));
   // }
 
-  // getQuizzes() {
-  //   const url = this.baseUrl + 'api/quizzes';
-	// 	return this._http
-	// 		.get<CategoryGroupChip[]>(url, { observe: 'response' })
-	// 		.pipe(
-	// 			map(response => makeSelectable(response.body)),
-	// 			catchError(err => handleRequestErrors(err, this._noDataUIErrorMessage, this._snackbarService))
-	// 		);
-  // }
+  getQuizzes() {
+    const url = this.baseUrl + 'api/quizzes';
+		return this.http
+			.get<IQuiz[]>(url, { observe: 'response' })
+			.pipe(
+				map(response => response.body));
+  }
 
   getQuizById(id: any) {
-    console.log('here in get byid')
-  
     const url = this.baseUrl + `api/quizzes/${id}`;
     return this.http.get(url, {observe: 'response'}).pipe(
       map(response => response.body));

@@ -13,5 +13,14 @@
                 ></app-button>
             </div>
         </div>
+        <mat-grid-list cols="4" rowHeight="200px">
+            <mat-grid-tile
+                *ngFor="let tile of tiles"
+                [colspan]="tile.cols"
+                [rowspan]="tile.rows"
+                [style.background]="">
+              <app-quiz-card [quiz]="tile.quiz" [color]="tile.color"></app-quiz-card>
+            </mat-grid-tile>
+          </mat-grid-list>
     </div>
 </div>

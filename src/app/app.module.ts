@@ -17,6 +17,9 @@ import { EditQuizComponent } from './components/quizzes/edit-quiz/edit-quiz.comp
 import { AddQuestionComponent } from './components/questions/add-question/add-question.component';
 import { QuestionComponent } from './shared/question/question.component';
 import { MatRadioModule } from '@angular/material/radio';
+import { QuizCardComponent } from './shared/quiz-card/quiz-card/quiz-card.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { QuizDetailsComponent } from './components/quizzes/quiz-details/quiz-details.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,9 @@ import { MatRadioModule } from '@angular/material/radio';
     AddQuizComponent,
     EditQuizComponent,
     AddQuestionComponent,
-    QuestionComponent
+    QuestionComponent,
+    QuizCardComponent,
+    QuizDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +45,8 @@ import { MatRadioModule } from '@angular/material/radio';
     FormsModule,
     MatInputModule,
     ReactiveFormsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatGridListModule
   ],
   exports: [
     ButtonComponent

@@ -1,0 +1,27 @@
+.inputs {
+    margin-top: 8px !important;
+    margin-bottom: 24px !important;
+}
+.mat-input-element {
+    border-bottom: 1px solid #444444;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+}
+.mat-form-field {
+	line-height: 2.6 !important;
+}
+.radio-button {
+    margin: 14px 14px 5px 5px;
+    color: #444444;
+    font-size: 14px;
+}
+
+.answer-row {
+    display: flex;
+	flex-direction: row;
+}
+.answer-column {
+    display: flex;
+	flex-direction: column;
+}

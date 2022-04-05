@@ -1,0 +1,18 @@
+<div class="center-page-content">
+    <div class="page-content-width" style="display: block">
+      <div class="row">
+        <div class="mb-md col-xs-12 col-sm-8">
+          <h2 style="line-height: 56px">{{ this.title}}</h2>
+          <h4>{{ this.category }}</h4>
+          <p>{{ this.description}}</p>
+        </div>
+        <div *ngIf="isAdmin()" class="mt-xl col-xs-12 col-sm-4 float-right">
+            <app-button
+                [input]="'Add a question'"
+                type="button"
+                routerLink="add-question"
+            ></app-button>
+        </div>
+      </div>
+    </div>
+</div>

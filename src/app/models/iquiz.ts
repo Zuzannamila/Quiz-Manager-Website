@@ -4,3 +4,10 @@ export interface IQuiz {
     description: string;
     category: string;
 }
+
+export interface Tile {
+    color: string;
+    cols: number;
+    rows: number;
+    quiz: IQuiz;
+  }

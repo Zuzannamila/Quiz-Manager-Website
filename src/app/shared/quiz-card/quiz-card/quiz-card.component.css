@@ -1,0 +1,37 @@
+#small-card {
+    padding: 14px;
+    width: 270px;
+    position: relative;
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	word-wrap: break-word;
+	background-clip: border-box;
+	border: 0px solid transparent;
+    border-radius: 15px;
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+#small-card:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+a {
+    text-decoration: none;
+}
+.header {
+    display: flex;
+	flex-direction: row;
+    justify-content: space-between;
+}
+.dot {
+    margin-right: 10px;
+    height: 25px;
+    width: 25px;
+    background-color: #fff !important;
+    border-radius: 50%;
+    border: 0.2px solid black;
+    display: inline-block; 
+}
+.white {
+    color: #fff !important;
+}
