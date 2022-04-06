@@ -28,6 +28,7 @@ export class QuizzesService {
       })
     )
   }
+  
   editQuiz(model: any, id: any) {
     const url = this.baseUrl + `api/quizzes/${id}`;
     const token = 'Bearer ' + localStorage.getItem('token');
@@ -43,6 +44,7 @@ export class QuizzesService {
       })
     )
   }
+
   getQuizzes() {
     const url = this.baseUrl + 'api/quizzes';
 		return this.http

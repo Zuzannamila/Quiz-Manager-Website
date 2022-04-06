@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { catchError, switchMap } from 'rxjs/operators';
+import { switchMap } from 'rxjs/operators';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { QuizzesService } from 'src/app/services/quizzes.service';
-import { throwError } from 'rxjs';
-import { HttpErrorResponse } from '@angular/common/http';
 import { IQuiz } from 'src/app/models/iquiz';
 
 @Component({
@@ -59,7 +57,7 @@ export class EditQuizComponent implements OnInit {
 			category: this.form.value.category.trim(),
 		};
 		this._quizzesService.editQuiz(quizToEdit, this.currentQuiz?.id).subscribe((x: Response ) => {
-      this._router.navigate([``]);
+      this._router.navigate([`${this.currentQuiz?.id}`]);
 		});
   }
 

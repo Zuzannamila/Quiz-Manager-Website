@@ -105,14 +105,12 @@
                         <label for="answerD" class="label">d)</label>
                         <input id="answerD" type="radio" value="answerD" name="answers" formControlName="answers">
                     </div>
-                </div>
-                
-                  
+                </div>     
             </div>
             <!-- Buttons -->
             <div class="p-sm pr-md button">
                 <app-button 
-                    [input]="'Add a question'"
+                    [input]="'Save changes'"
                     [disabled]="isDisabled(!form.controls.question?.value || !form.controls.answerBText?.value || !form.controls.answerAText?.value || !form.controls.answers?.value || !form.controls.answerCText?.value || !form.controls.answerDText?.value)"
                     (click)="onSubmit()"
                     type="button"

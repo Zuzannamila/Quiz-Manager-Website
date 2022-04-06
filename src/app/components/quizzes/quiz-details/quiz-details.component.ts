@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 import { IQuestion } from 'src/app/models/iquestion';
 import { AnswersService } from 'src/app/services/answers.service';
@@ -21,6 +21,7 @@ export class QuizDetailsComponent implements OnInit {
   fullQuestions: any[] = [];
 
   constructor(
+    private _router: Router,
     private _activeRoute: ActivatedRoute,
     private _quizzesService: QuizzesService,
     private _answersService: AnswersService,
@@ -42,7 +43,6 @@ export class QuizDetailsComponent implements OnInit {
     );
   }
 
-
   assignDataToCards = (quiz: any) => {
     return this._questionsService.getQuestions(quiz.id).subscribe((res: any) => {
       this.questions = res;
@@ -59,12 +59,13 @@ export class QuizDetailsComponent implements OnInit {
             questionId: question.id
           };
           this.fullQuestions.push(fullQuestion);
-    
           });
       });
-
       });
+  }
 
+  navigateToEdit() {
+    this._router.navigate([`/edit-quiz/${this.id}`]);
   }
 
   setPage = (quiz: any) => {

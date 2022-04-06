@@ -1,6 +1,5 @@
 import { IQuiz, Tile } from './../../models/iquiz';
 import { Component, OnInit } from '@angular/core';
-import { takeUntil } from 'rxjs/operators';
 import { QuizzesService } from 'src/app/services/quizzes.service';
 
 @Component({
@@ -15,8 +14,7 @@ export class QuizzesComponent implements OnInit {
   colors: string[] = ['#FF388A', '#FFD229', '#FFDAD6', '#3860FF', '#2FAB5A']
   tiles: Tile[] = [];
 
-  constructor(private _quizzesService: QuizzesService) { 
-  }
+  constructor(private _quizzesService: QuizzesService) { }
 
   ngOnInit(): void {
     this.assignDataToCards();

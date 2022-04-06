@@ -57,10 +57,6 @@
           
           <!-- Buttons -->
 				<div class="p-sm pr-md">
-					<!-- <button class="outline-icon-button mr-md" [routerLink]="'/locations'" id="cancelButton">
-						<mat-icon matPrefix class="mr-sm" id="cancelIcon"> keyboard_backspace </mat-icon>
-						<span>Cancel</span>
-					</button> -->
 					<app-button 
             [input]="'Add a user'"
             [disabled]="isDisabled(!form.controls.userName?.value || !form.controls.email?.value || !form.controls.password?.value)"

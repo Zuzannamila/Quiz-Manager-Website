@@ -1,9 +1,12 @@
 <div class="center-page-content">
     <div class="page-content-width" style="display: block">
-        <div class="card card-padding">
+        <div class="card card-padding card-margin">
             <div class="justify-space-end">
+                <div *ngIf="isAdmin()">
+                    <button class="astext padding-0" (click)="navigateToEdit()">Edit</button>
+                </div>
                 <div *ngIf="isAdmin() || isTeacher()">
-                    <button class="astext" (click)="navigateToEdit()">Edit</button>
+                    
                     <button class="astext" (click)="showAnswers()">Show answer =></button>
                 </div>
                 <span class="dot"><span class="number">1</span></span>

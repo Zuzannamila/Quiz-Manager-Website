@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 import { QuizzesService } from 'src/app/services/quizzes.service';
 
 @Component({
@@ -32,14 +31,14 @@ export class AddQuizComponent implements OnInit {
       var string = JSON.stringify(x);
       var json = JSON.parse(string);
       var id = json.body['id'];
-      this._router.navigate([`/edit-quiz/${id}`]);
+      this._router.navigate([`/${id}`]);
 		});
   }
+  
   isDisabled(isEmpty: any) {
     if (isEmpty) {
       return true;
     }
     return undefined;
   }
-
 }

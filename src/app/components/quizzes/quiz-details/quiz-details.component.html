@@ -7,6 +7,7 @@
           <p>{{ this.description}}</p>
         </div>
         <div *ngIf="isAdmin()" class="mt-xl col-xs-12 col-sm-4 float-right">
+            <button class="astext padding-0" (click)="navigateToEdit()">Edit</button>
             <app-button
                 [input]="'Add a question'"
                 type="button"

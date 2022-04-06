@@ -18,7 +18,7 @@ export class QuestionComponent implements OnInit {
   
   form: FormGroup;
 
-  constructor(private _router: Router,) { 
+  constructor(private _router: Router) { 
     this.form = new FormGroup({
       answers: new FormControl('', [Validators.required])
 		});

@@ -25,7 +25,6 @@ export class LoginComponent implements OnInit{
   }
 
   onSubmit() {
-    // this._authService.IsLoggedIn = true;
     if (this.form.valid) {
 			const userToLogin: any = {
 				Email: this.form.value.email.trim(),

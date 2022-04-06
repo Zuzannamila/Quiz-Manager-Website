@@ -32,4 +32,26 @@ export class QuestionsService {
     .pipe(
       map(response => response.body));
   }
+
+  getQuestionById(id: any) {
+    const url = this.baseUrl + `api/questions/${id}`;
+    return this.http.get(url, {observe: 'response'}).pipe(
+      map(response => response.body));
+  }
+
+  editQuestion(model: any, id: any) {
+    const url = this.baseUrl + `api/questions/${id}`;
+    const token = 'Bearer ' + localStorage.getItem('token');
+    return this.http.put(url, model, {
+      observe: 'response',
+      headers: new HttpHeaders({
+        'Authorization': token,
+      }),
+    })
+    .pipe(
+      map((response: any) => {
+        return response;
+      })
+    )
+  }
 }

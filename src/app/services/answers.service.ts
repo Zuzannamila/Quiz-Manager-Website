@@ -35,5 +35,20 @@ export class AnswersService {
 			.pipe(
 				map(response => response.body));
   }
-    
+  
+  editAnswers(model: any, id: any) {
+    const url = this.baseUrl + `api/answers/${id}`;
+    const token = 'Bearer ' + localStorage.getItem('token');
+    return this.http.put(url, model, {
+      observe: 'response',
+      headers: new HttpHeaders({
+        'Authorization': token,
+      }),
+    })
+    .pipe(
+      map((response: any) => {
+        return response;
+      })
+    )
+  }
 }
